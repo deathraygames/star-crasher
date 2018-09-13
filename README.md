@@ -1,5 +1,5 @@
 # Star-Crasher
-A game for js13k 2018
+A quasi-3d starship piloting game for js13k 2018
 
 ## Version 1.0 Submission for js13k 2018
 
@@ -7,11 +7,12 @@ Original made for js13k competition 2018 over the course of several days
 
 ### Play Now
 
-* [v1.0 (13k)](https://deathraygames.com/play-online/star-crasher/js13k/)
+* [v1.0 (13k) on deathraygames.com](https://deathraygames.com/play-online/star-crasher/js13k/)
 
+Screenshot:
 ![screenshot of v1](images/screenshot-400x250.png)
 
-## More Info
+## JS13k
 
 * [JS13k Rules](http://2018.js13kgames.com/#rules): Make a game with a package size less than 13k (13,312 bytes)
 * See all the entries for the competition at http://2018.js13kgames.com/
@@ -27,6 +28,8 @@ Original made for js13k competition 2018 over the course of several days
 
 ## Credits
 
- * Developed by Luke
- * Incorporates some algorithms from Sebastian Macke and Hunter Loftis
+ * Developed by Luke Nickerson
+ * Incorporates some great algorithms by others:
+   * the brilliant [Voxel Space algorithms](https://github.com/s-macke/VoxelSpace) from Sebastian Macke ([ES6 version](https://github.com/Lukenickerson/VoxelSpace))
+   * Hunter Loftis's [terrain-generation algorithm](https://github.com/hunterloftis/playfuljs-demos/blob/gh-pages/terrain/index.html)
 
