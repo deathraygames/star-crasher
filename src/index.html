@@ -5,85 +5,87 @@
 	<meta charset="utf-8">
 	<meta name="description" content="Star Crasher game for js13k 2018">
 	<meta name="author" content="Luke Nickerson using some algorithms by Sebastian Macke and Hunter Loftis">
-	<style>
-		html, body {
-			margin: 0; height: 100%; overflow: hidden;
-			font-family: monospace; ;
-		}
-		canvas { width: 100%; height: 100%; }
-		a { color: white; }
-		b {
-			display: block;
-		}
-		p {
-			position: absolute;
-			display: block;
-			left: 0; right: 0;
-		}
-		#ship {
-			top: 0; bottom: 0;
-			border: solid 10px #303639;
-		}
-		#screen {
-			top: 0;
-			bottom: 200px;
-			box-shadow: inset 0 0 200px rgba(0,0,0,0.8);
-		}
-		#dashboard {
-			position: absolute;
-			height: 200px;
-			bottom: 0;
-			background: #303639;
-			color: rgba(255,255,255,0.6);
-		}
-	</style>
+	<link rel="stylesheet" href="starship.css" />
 </head>
-<body scroll="no">
+<body scroll="no" class="splash">
 
-<canvas id=terrain width=800 height=400></canvas>
+<canvas id=terrain width=800 height=600></canvas>
 
-<p id=ship>
-	<p id=screen>
-	</p>
-	<p id=dashboard>
-		<b id=fuel>
-			<button>F</button>
-			<b class=v-bar><b></b></b>
-		</b>
-		<b id=engines>
-			<button>1</button>
-			<button>2</button>
-			<button>3</button>
-			<button>3</button>
-		</b>
-		<b id=throttle>
-		</b>
-		<b id=systems>
-			<ul>
-				<li>
-		</b>
-		<b id=nav>
-			<b class="h-needle"><b></b></b>
-			<b>
-				Fly controls
-				<i>WASD</i> or <i>Cursor Keys</i> or <i>left click</i> move, 
-				<i>R|F</i> up | down, 
-				<i>Q|E</i> pitch,
-				<i>Z</i> toggle gravity
-				<br>
-				<label for="distancerangew">Distance</label>
-				<input id="distancerange" type="range" min="100" max="3000" step="1" onchange="g.camera.distance = this.value">
+<i id=ship class=offline>
+	<i id=screen>
+	</i>
+	<svg width=100% height=100% viewBox="0 0 800 600">
+		<polygon points="0 600, 0 450,
+			100 400, 0 0, 20 0, 120 400,
+			680 400, 780 0, 800 0, 700 400,
+			800 450, 800 600" />
+	</svg>
+
+	<i id=overhead>
+		<h2>Energy</h2>
+		<button title="Deploy solar panels" id=deploy-solar></button>
+		<b class="console h-needle" id=energy-rate><b></b></b>
+		<b class="console h-bar" id=energy><b></b></b>
+	</i>
+	<i id=dashboard>
+		<b id=inner-dashboard>
+			<b id=fuel>
+				<h2>Fuel</h2>
+				<button id=load-fuel title="Load fuel from nearby depot"></button>
+				<b class="console v-bar" id=fuel-gauge><b></b></b>
 			</b>
-			<b id="fps"></b>
+			<b id=engines>
+				<h2>Throttle</h2>
+				<b id=throttle>
+					<b class=console id=speed></b>
+					<!-- <b class="console h-bar"><b></b></b> -->
+				</b>
+				<h2>Launch</h2>
+				<button id=rockets></button>
+			</b>
+			<b id=systems>
+				<h2>Systems</h2>
+				<b class="console" id=repair-info></b>
+				<ul>
+					<li id=sys-so>Solar Panels <span></span> <button title="Repair"></button></li>
+					<li id=sys-ca>Cargo Loader <span></span> <button title="Repair"></button></li>
+					<li id=sys-fu>Fuel Loader <span></span> <button title="Repair"></button></li>
+					<li id=sys-ov>Overdrive <span></span> <button title="Repair"></button></li>
+					<li id=sys-ho>Hover <span></span> <button title="Repair"></button></li>
+					<li id=sys-ro>Rockets <span></span> <button title="Repair"></button></li>
+				</ul>
+			</b>
+			<b id=nav>
+				<h2>Guidance</h2>
+				<b class="console h-needle" id=depot-distance></b>
+				<b class=console>
+					Fly controls
+					<ul>
+						<li>WASD or Cursor Keys = move
+						<li>R/F = up/down
+						<li>Q/E = pitch
+					</ul>
+					<label for="distancerangew">Distance</label>
+					<input id="distancerange" type="range" min="100" max="3000" step="1" onchange="g.camera.distance = this.value">
+					<b id="fps"></b>
+				</b>
+			</b>
+			<b id=cargo>
+				<h2>Cargo</h2>
+				<button id=load-parts title="Load parts from nearby depot"></button>
+				<b class="console v-bar" id=parts-gauge><b></b></b>
+			</b>
 		</b>
-		<b id=cargo>
-			<button>C</button>
-			<b class=v-bar><b></b></b>
-		</b>
-	</p>
-</p>
+	</i>
+</i>
+
+<div id=splash>
+	Star-Crasher
+	<div id=sub-title>Loading...</div>
+</div>
 
 <script src="scripts/Map.js"></script>
+<script src="scripts/Ship.js"></script>
 <script src="scripts/Input.js"></script>
 <script src="scripts/star-crasher.js"></script>
 

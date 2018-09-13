@@ -20,6 +20,7 @@ function setupMap() {
 	setHoles();
 	console.timeEnd('set mountains and holes');
 	console.time('smooth');
+	// smoothMap(1);
 	smoothMap(5);
 	smoothMap(2);
 	console.timeEnd('smooth');
@@ -222,7 +223,9 @@ function setDepots() {
 			baseAltitude: 0,
 			topAltitude: 0,
 			baseColor: 0xFFaaaa44,
-			topColor: 0xFF999977,
+			topColor: (d == 1) ? 0xFF779999 : 0xFF999977,
+			type: (d == 1) ? 'fuel' : 'parts',
+			quantity: 100,
 		};
 		depot.baseAltitude = getAltitude(depot.x, depot.y) + 6;
 		depot.topAltitude = depot.baseAltitude + 10;
