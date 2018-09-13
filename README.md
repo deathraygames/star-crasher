@@ -20,9 +20,9 @@ Screenshot:
 ## Size
 
 * Source: 31.7 KB (32,519 bytes)
- * scripts 25.7 KB
- * styles 3.18 KB
- * index.html 2.79 KB
+  - scripts 25.7 KB
+  - styles 3.18 KB
+  - index.html 2.79 KB
 * _didn't minify_
 * Zipped: 10.3 KB (10,648 bytes)
 
@@ -30,6 +30,6 @@ Screenshot:
 
  * Developed by Luke Nickerson
  * Incorporates some great algorithms by others:
-   * the brilliant [Voxel Space algorithms](https://github.com/s-macke/VoxelSpace) from Sebastian Macke ([ES6 version](https://github.com/Lukenickerson/VoxelSpace))
+   * Sebastian Macke's brilliant [Voxel Space algorithms](https://github.com/s-macke/VoxelSpace) ([ES6 version](https://github.com/Lukenickerson/VoxelSpace))
    * Hunter Loftis's [terrain-generation algorithm](https://github.com/hunterloftis/playfuljs-demos/blob/gh-pages/terrain/index.html)
 
