@@ -9,7 +9,7 @@ Original made for js13k competition 2018 over the course of several days
 
 * [v1.0 (13k)](https://deathraygames.com/play-online/star-crasher/js13k/)
 
-[screenshot of v1](images/screenshot-400x250.png)
+![screenshot of v1](images/screenshot-400x250.png)
 
 ## More Info
 
