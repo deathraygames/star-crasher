@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Star-Crasher js13k 2018</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Star Crasher game for js13k 2018">
+	<meta name="author" content="Luke Nickerson using some algorithms by Sebastian Macke and Hunter Loftis">
+	<style>
+		html, body {
+			margin: 0; height: 100%; overflow: hidden;
+			font-family: monospace; ;
+		}
+		canvas { width: 100%; height: 100%; }
+		a { color: white; }
+		b {
+			display: block;
+		}
+		p {
+			position: absolute;
+			display: block;
+			left: 0; right: 0;
+		}
+		#ship {
+			top: 0; bottom: 0;
+			border: solid 10px #303639;
+		}
+		#screen {
+			top: 0;
+			bottom: 200px;
+			box-shadow: inset 0 0 200px rgba(0,0,0,0.8);
+		}
+		#dashboard {
+			position: absolute;
+			height: 200px;
+			bottom: 0;
+			background: #303639;
+			color: rgba(255,255,255,0.6);
+		}
+	</style>
+</head>
+<body scroll="no">
+
+<canvas id=terrain width=800 height=400></canvas>
+
+<p id=ship>
+	<p id=screen>
+	</p>
+	<p id=dashboard>
+		<b id=fuel>
+			<button>F</button>
+			<b class=v-bar><b></b></b>
+		</b>
+		<b id=engines>
+			<button>1</button>
+			<button>2</button>
+			<button>3</button>
+			<button>3</button>
+		</b>
+		<b id=throttle>
+		</b>
+		<b id=systems>
+			<ul>
+				<li>
+		</b>
+		<b id=nav>
+			<b class="h-needle"><b></b></b>
+			<b>
+				Fly controls
+				<i>WASD</i> or <i>Cursor Keys</i> or <i>left click</i> move, 
+				<i>R|F</i> up | down, 
+				<i>Q|E</i> pitch,
+				<i>Z</i> toggle gravity
+				<br>
+				<label for="distancerangew">Distance</label>
+				<input id="distancerange" type="range" min="100" max="3000" step="1" onchange="g.camera.distance = this.value">
+			</b>
+			<b id="fps"></b>
+		</b>
+		<b id=cargo>
+			<button>C</button>
+			<b class=v-bar><b></b></b>
+		</b>
+	</p>
+</p>
+
+<script src="scripts/Map.js"></script>
+<script src="scripts/Input.js"></script>
+<script src="scripts/star-crasher.js"></script>
+
+</body>
+</html>
