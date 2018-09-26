@@ -32,4 +32,5 @@ Screenshot:
  * Incorporates some great algorithms by others:
    * Sebastian Macke's brilliant [Voxel Space algorithms](https://github.com/s-macke/VoxelSpace) ([ES6 version](https://github.com/Lukenickerson/VoxelSpace))
    * Hunter Loftis's [terrain-generation algorithm](https://github.com/hunterloftis/playfuljs-demos/blob/gh-pages/terrain/index.html)
+ * Inspired by [Orion (LD31) by feiss](http://ludumdare.com/compo/ludum-dare-31/?action=preview&uid=8733)
 
